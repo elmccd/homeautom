@@ -1,0 +1,55 @@
+<header class="main_header">
+    <div class="main_header__left">
+        <span class="main_header__time">{{ date | date:'H:m'}}</span>
+        <span class="main_header__date">{{ date | date:'d MMM y, EEEE'}}</span>
+    </div>
+    <div class="main_header__right">
+        <div class="main_header__notifications">
+            <span class="icon-warning"></span>
+            <span>You have got <strong>1 new alert</strong></span>
+        </div>
+        <ul class="main_header__icons">
+            <li class="main_header__icon--active">
+                <span class="icon-cord"></span>
+            </li>
+            <li>
+                <span class="icon-cloud-check"></span>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<ul class="main_nav">
+    <li>
+        <a routerLink="/dashboard" routerLinkActive="main_nav__item--active">
+            <span class="main_nav__icon icon-home"></span>
+            Dashboard
+        </a>
+    </li>
+    <li>
+        <a routerLink="/lights" routerLinkActive="main_nav__item--active">
+            <span class="main_nav__icon icon-light-bulb"></span>
+            Lights
+        </a>
+    </li>
+    <li>
+        <a routerLink="/blinders" routerLinkActive="main_nav__item--active">
+            <span class="main_nav__icon icon-sun"></span>
+            Blinders
+        </a>
+    </li>
+    <li>
+        <a routerLink="/alarm" routerLinkActive="main_nav__item--active">
+            <span class="main_nav__icon icon-alarm"></span>
+            Alarm
+        </a>
+    </li>
+    <li>
+        <a routerLink="/settings" routerLinkActive="main_nav__item--active">
+            <span class="main_nav__icon icon-gear"></span>
+            Settings
+        </a>
+    </li>
+</ul>

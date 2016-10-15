@@ -1,0 +1,158 @@
+@import 'fonts/iconmoon';
+
+$backgroundBlue: #00EBC1;
+$white: #ffffff;
+$backgroundDarkGray: #333333;
+$backgroundNavGray: #3c3c3c;
+$backgroundGray: #474e4d;
+$textGray: #dddddd;
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  font-size: 18px;
+}
+
+@mixin blueBackground () {
+  background: linear-gradient($backgroundBlue, darken($backgroundBlue, 5%));;
+}
+
+.splash_screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10rem;
+
+  @include blueBackground();
+}
+
+.main_header {
+  color: $white;
+  background: $backgroundGray;
+  display: flex;
+  height: 3rem;
+  > * {
+    height: 100%;
+  }
+}
+
+.main_header__left {
+  background: $backgroundDarkGray;
+  flex-grow: 1;
+  min-width: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main_header__time {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.main_header__date {
+  text-transform: uppercase;
+}
+
+.main_header__right {
+  flex-grow: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.main_header__notifications {
+  font-size: 0.9rem;
+  color: $textGray;
+  strong {
+    color: $white;
+  }
+}
+
+.main_header__icons {
+  list-style: none;
+  display: flex;
+  font-size: 1.2rem;
+  li {
+    margin: 0 10px;
+  }
+}
+.main_header__icon--active {
+
+}
+
+
+.main_content {
+  padding: 1rem;
+}
+
+.main_content--blue {
+  @include blueBackground();
+  color: $white;
+}
+
+.main_content--70 {
+  height: calc(65vh - 3rem);
+}
+
+.main_content--30 {
+  height: calc(35vh - 5rem);
+}
+
+.main_nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $backgroundNavGray;
+  color: #fff;
+  border-top: 2px solid darken($backgroundBlue, 20%);
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
+
+  li {
+    flex-grow: 1;
+    text-align: center;
+    width: 3rem; //reference for flex
+    font-size: 0.6rem;
+
+    &:hover {
+      background: $backgroundBlue;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+  }
+}
+
+.main_nav__item--active {
+  background: darken($backgroundBlue, 20%);
+}
+
+.main_nav__icon {
+  font-size: 2rem;
+  display: block;
+  margin: 0 0 9px;
+}
