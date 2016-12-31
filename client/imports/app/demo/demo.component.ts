@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DemoDataService } from './demo-data.service';
-import { Demo } from "../../../../both/models/demo.model";
+import { Light } from "../../../../both/models/light.model";
 import template from './demo.component.html';
 import style from "./demo.component.scss";
 
@@ -12,13 +12,20 @@ import style from "./demo.component.scss";
 })
 export class DemoComponent implements OnInit {
   greeting: string;
-  data: Observable<Demo[]>;
+  data: Observable<Light[]>;
 
   constructor(private demoDataService: DemoDataService) {
-    this.greeting = 'Hello Demo Component!';
+    this.greeting = 'Hello Light Component!';
   }
 
   ngOnInit() {
     this.data = this.demoDataService.getData().zone();
+
+    console.log(this.data);
+
+
+    this.data.subscribe(res => {
+      console.log(res);
+    })
   }
 }

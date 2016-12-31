@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { DemoDataService } from './demo/demo-data.service';
-import { DashboardComponent, SettingsComponent } from './components';
+import { DashboardComponent, SettingsComponent, BulbComponent } from './components';
 
 @NgModule({
   // Components, Pipes, Directive
@@ -12,6 +13,7 @@ import { DashboardComponent, SettingsComponent } from './components';
     AppComponent,
     DashboardComponent,
     SettingsComponent,
+    BulbComponent,
     DemoComponent
   ],
   // Entry Components
@@ -25,10 +27,11 @@ import { DashboardComponent, SettingsComponent } from './components';
   // Modules
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'dashboard', component: DashboardComponent },
       { path: 'settings', component: SettingsComponent },
-      { path: '', component: DashboardComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', component: DashboardComponent }
     ])
   ],

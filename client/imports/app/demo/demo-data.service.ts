@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ObservableCursor } from 'meteor-rxjs';
-import { Demo } from "../../../../both/models/demo.model";
-import { DemoCollection } from "../../../../both/collections/demo.collection";
+import { Light } from "../../../../both/models/light.model";
+import { LightCollection } from "../../../../both/collections/light.collection";
 
 @Injectable()
 export class DemoDataService {
-  private data : ObservableCursor<Demo>;
+  private data : ObservableCursor<Light>;
 
   constructor() {
-    this.data = DemoCollection.find({});
+    this.data = LightCollection.find({});
   }
 
-  public getData() : ObservableCursor<Demo> {
+  public getData() : ObservableCursor<Light> {
     return this.data;
   }
 }

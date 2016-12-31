@@ -6,7 +6,7 @@ import {TestBed, TestModuleMetadata} from "@angular/core/testing";
 
 // Project imports
 import {DemoComponent} from './demo.component';
-import {Demo} from "../../../../both/models/demo.model";
+import {Light} from "../../../../both/models/demo.model";
 import {DemoDataService} from "./demo-data.service";
 import {Observable, Subject, BehaviorSubject} from "rxjs";
 
@@ -17,7 +17,7 @@ describe('DemoComponent', () => {
 
   let mockData = new BehaviorSubject([]);
   mockData.next([
-    <Demo>{
+    <Light>{
       name: 'Test',
       age: 10
     }

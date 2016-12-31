@@ -1,0 +1,17 @@
+.bulb-component-container {
+  position: relative;
+  > * {
+    font-size: 25rem;
+  }
+}
+
+.bulb-component {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+}
+
+.bulb-component--light {
+  color: yellow;
+}

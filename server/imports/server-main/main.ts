@@ -1,26 +1,24 @@
-import {DemoCollection} from "../../../both/collections/demo.collection";
-import {Demo} from "../../../both/models/demo.model";
+import {LightCollection} from "../../../both/collections/light.collection";
+import {Light} from "../../../both/models/light.model";
 export class Main {
   start(): void {
     this.initFakeData();
   }
 
   initFakeData(): void {
-    if (DemoCollection.find({}).cursor.count() === 0) {
-      const data: Demo[] = [{
-        name: 'Dotan',
-        age: 25
-      }, {
-        name: 'Liran',
-        age: 26
-      }, {
-        name: 'Uri',
-        age: 30
-      }];
+    if (LightCollection.find({}).cursor.count() === 0) {
+      const data: Light[] = [
+        {
+          id: 1,
+          status: false
+        }
+      ];
       
-      data.forEach((obj: Demo) => {
-        DemoCollection.insert(obj);
-      });
+      setInterval(function () {
+        data.forEach((obj: Light) => {
+          LightCollection.insert(obj);
+        });
+      }, 1000);
     }
   }
 }
